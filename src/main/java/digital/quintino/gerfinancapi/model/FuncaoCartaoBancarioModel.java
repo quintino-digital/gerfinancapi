@@ -1,7 +1,14 @@
 package digital.quintino.gerfinancapi.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "TB_FUNCAO_CARTAO_BANCARIO")
 public class FuncaoCartaoBancarioModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CODIGO", nullable = false)
     private Long codigo;
 
     private String descricao;
