@@ -11,6 +11,7 @@ public class FuncaoCartaoBancarioModel {
     @Column(name = "CODIGO", nullable = false)
     private Long codigo;
 
+    @Column(name = "DESCRICAO", nullable = false)
     private String descricao;
 
     public FuncaoCartaoBancarioModel() { }
