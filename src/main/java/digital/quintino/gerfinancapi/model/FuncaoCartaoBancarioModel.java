@@ -1,10 +1,14 @@
 package digital.quintino.gerfinancapi.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "TB_FUNCAO_CARTAO_BANCARIO")
-public class FuncaoCartaoBancarioModel {
+public class FuncaoCartaoBancarioModel implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

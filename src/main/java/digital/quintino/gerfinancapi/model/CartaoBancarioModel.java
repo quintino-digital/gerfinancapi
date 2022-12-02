@@ -1,32 +1,33 @@
 package digital.quintino.gerfinancapi.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "TB_CARTAO_BANCARIO")
-public class CartaoBancarioModel {
+public class CartaoBancarioModel implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CODIGO", nullable = false)
     private Long codigo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "ID_CATEGORIA_CARTAO_BANCARIO")
     private CategoriaCartaoBancarioModel categoriaCartaoBancarioModel;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ID_BANDEIRA_CARTAO_BANCARIO")
     private BandeiraCartaoBancarioModel bandeiraCartaoBancarioModel;
 
